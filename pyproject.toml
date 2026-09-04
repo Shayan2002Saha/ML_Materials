@@ -1,0 +1,43 @@
+[project]
+name = "ml-materials"
+version = "0.1.0"
+description = "Complete Machine Learning study material - classical ML, one Jupyter notebook per chapter."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+
+dependencies = [
+    # Core numeric / data stack
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "scipy>=1.14",
+    "scikit-learn>=1.5",
+    # Plotting
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+    # Statistics (regression diagnostics, VIF, hypothesis tests)
+    "statsmodels>=0.14",
+    # Gradient boosting libraries compared in chapter 19
+    "xgboost>=2.1",
+    "lightgbm>=4.5",
+    "catboost>=1.2",
+    # Imbalanced learning (chapter 22) and association rules (chapter 21)
+    "imbalanced-learn>=0.12",
+    "mlxtend>=0.23",
+    # Interpretability (chapter 24)
+    "shap>=0.46",
+    "lime>=0.2",
+    # Hyperparameter search (chapter 23)
+    "optuna>=4.0",
+    # Model persistence (chapter 24)
+    "joblib>=1.4",
+]
+
+[dependency-groups]
+# Everything needed to author and execute the notebooks, but not to read them.
+dev = [
+    "jupyter>=1.1",
+    "ipykernel>=6.29",
+    "nbconvert>=7.16",
+    "nbclient>=0.10",
+    "nbformat>=5.10",
+]

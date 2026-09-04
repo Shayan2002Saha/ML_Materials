@@ -1,0 +1,22 @@
+# Virtual environment (recreate with `uv sync`)
+.venv/
+venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Artifacts written by notebook demos (chapter 24 persists a model, others write temp files)
+*.joblib
+*.pkl
+scratch/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
