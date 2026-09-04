@@ -64,12 +64,37 @@ Chapters 11–21 each follow the same fixed order, and none of the four steps is
 Where the from-scratch version *cannot* reasonably match sklearn (SVM's QP solver, the boosting libraries'
 histogram binning), say so explicitly and compare predictions or scores instead of parameters.
 
+## The closing "In Practice" section
+
+**Every chapter ends with one**, as its last numbered section, before the scratch cell. It is not a summary
+— the chapter body already said everything once. It is where the chapter's material gets used the way it
+would be used at work. Three fixed parts:
+
+1. **A worked case.** A short, concretely stated problem, solved end to end with the chapter's tools — on
+   `data/customers.csv`, `data/transactions.csv`, or a bundled dataset. State the problem in a sentence
+   before touching code, and finish with what the result actually tells someone who has to make a decision.
+2. **When to reach for this — and when not to.** A decision table. Include the honest "don't" rows: the
+   conditions under which the chapter's technique is the wrong choice and what to use instead. A section
+   that only lists strengths is advertising, not guidance.
+3. **What goes wrong in production.** The failures that show up after deployment rather than during
+   fitting — silent ones especially. Cross-reference the chapter that covers each properly (22.7 for
+   leakage, 24.9 for drift) rather than re-explaining it here.
+
+Shape it to the chapter. For the foundations chapters (1–3) and the theory chapters (9–10) a case study
+would be artificial; there part 1 becomes "where this actually shows up in real work" — a framing exercise,
+a real debugging session, a decision someone had to make — while parts 2 and 3 stay as they are.
+
+Keep it proportionate: this section is the chapter's landing, not a second chapter. It does not introduce
+new techniques, and anything it needs that was not covered above belongs above.
+
 ## Numbering
 
 * **Chapter numbers are frozen.** 1–24, plus 0 (conventions) and 25 (appendix) in `00_index.ipynb`.
-* **New sub-sections append** to the end of a chapter, before the `x.9` bucket if one exists.
-* **`x.9` is an optional overflow bucket.** Drop it when a chapter is otherwise complete rather than
-  leaving an empty heading.
+* **The last numbered section of every chapter is `In Practice`.** New sub-sections append before it, never
+  after.
+* **There is no `x.9` overflow bucket.** The reference material this style descends from used one to park
+  content arriving out of order; here every chapter is authored as a whole, so anything unclassified is a
+  sign the section list is wrong, not that a bucket is needed.
 * **Deeper levels are free-form** — `17.3.2` can be created and reordered freely.
 * **Moving or renaming a section** means fixing every pointer to it, including `00_index.ipynb` §25.1 and
   §25.2.
