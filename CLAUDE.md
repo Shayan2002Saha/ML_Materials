@@ -114,6 +114,12 @@ Every substantive cross-reference should also appear in the Appendix cross-refer
   the committed output.
 * **Keep it fast.** No cell should take more than a few seconds; no chapter more than a minute. Use small
   `n`, few estimators, and short search grids. A slow chapter does not get read twice.
+
+  One chapter is over budget and deliberately so: **Chapter 19 takes about three minutes**, because it
+  benchmarks four boosting libraries and runs a nine-model scoreboard, and cutting either would remove
+  the point of the chapter. It was reduced from six minutes rather than left alone. If another chapter
+  starts creeping past a minute, time the cells before trimming — the cost is usually concentrated in two
+  or three of them, not spread evenly.
 * **No downloads.** `sklearn.datasets` bundled loaders, the `make_*` generators, and `data/*.csv` only.
 * **Plots**: one point per figure, labelled axes, a title that states the takeaway rather than restating the
   axes. Default matplotlib/seaborn styling — no custom themes.
