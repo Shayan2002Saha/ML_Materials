@@ -115,11 +115,19 @@ Every substantive cross-reference should also appear in the Appendix cross-refer
 * **Keep it fast.** No cell should take more than a few seconds; no chapter more than a minute. Use small
   `n`, few estimators, and short search grids. A slow chapter does not get read twice.
 
-  One chapter is over budget and deliberately so: **Chapter 19 takes about three minutes**, because it
-  benchmarks four boosting libraries and runs a nine-model scoreboard, and cutting either would remove
-  the point of the chapter. It was reduced from six minutes rather than left alone. If another chapter
-  starts creeping past a minute, time the cells before trimming — the cost is usually concentrated in two
-  or three of them, not spread evenly.
+  Two chapters are over budget and deliberately so, both for the same reason — they benchmark several
+  competing methods on one problem, and the benchmark *is* the chapter:
+
+  * **Chapter 19 takes about three minutes**: four boosting libraries plus a nine-model scoreboard. It was
+    reduced from six minutes rather than left alone.
+  * **Chapter 23 takes about four and a half minutes**: grid, randomized, halving and Optuna searches run
+    on the same pipeline so their results are comparable. It was reduced from nearly nine minutes, and one
+    194-second cell was replaced outright after timing showed it was 37% of the chapter and did not
+    demonstrate its claim.
+
+  If another chapter starts creeping past a minute, time the cells before trimming — the cost is usually
+  concentrated in two or three of them, not spread evenly. `time_cells.py` in the scratchpad does this.
+  Do not silently accept a third exception: either trim it, or record it here with its justification.
 * **No downloads.** `sklearn.datasets` bundled loaders, the `make_*` generators, and `data/*.csv` only.
 * **Plots**: one point per figure, labelled axes, a title that states the takeaway rather than restating the
   axes. Default matplotlib/seaborn styling — no custom themes.
